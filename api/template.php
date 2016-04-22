@@ -13,7 +13,7 @@
       if(valid_session($_GET['account'], $_GET['key'])) {
         // DATABASE AND QUERY SETUP
         $db = connect();
-        $query = $db->prepare("SELECT label, account FROM templates WHERE id=:id LIMIT 1;");
+        $query = $db->prepare("SELECT id, label, account FROM templates WHERE id=:id LIMIT 1;");
 
         // PARAMETER SETUP
         $query->bindParam(":id", $id);
@@ -23,9 +23,38 @@
         $dataset = $query->fetchAll();
 
         if(count($dataset) > 0) {
+          $response['id'] = $dataset[0]['id'];
           $response['label'] = $dataset[0]['label'];
           $response['account'] = $dataset[0]['account'];
           $response['error'] = false;
+        } else {
+          $response["error_msg"] = 'The table does not contain a row with that id.';
+        }
+      } else {
+        $response["error_msg"] = 'Your session is invalid.';
+      }
+    } else if(isset($_GET['account']) && isset($_GET['key'])) {
+      if(valid_session($_GET['account'], $_GET['key'])) {
+        // DATABASE AND QUERY SETUP
+        $db = connect();
+        $query = $db->prepare("SELECT id, label, account FROM templates WHERE account=:account;");
+
+        // PARAMETER SETUP
+        $query->bindParam(":account", $account);
+        $account = $_GET['account'];
+
+        $query->execute();
+        $dataset = $query->fetchAll();
+
+        if(count($dataset) > 0) {
+          $response['templates'] = array();
+          for($i = 0; $i < count($dataset); $i++) {
+            $response['templates'][$i] = array(
+              'id' => $dataset[0]['id'],
+              'label' => $dataset[0]['label'],
+              'account' => $dataset[0]['account']
+            );
+          }
         } else {
           $response["error_msg"] = 'The table does not contain a row with that id.';
         }

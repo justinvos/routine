@@ -13,7 +13,7 @@
       if(valid_session($_GET['account'], $_GET['key'])) {
         // DATABASE AND QUERY SETUP
         $db = connect();
-        $query = $db->prepare("SELECT label, template FROM tasks WHERE id=:id LIMIT 1;");
+        $query = $db->prepare("SELECT id, label, template FROM tasks WHERE id=:id LIMIT 1;");
 
         // PARAMETER SETUP
         $query->bindParam(":id", $id);
@@ -23,6 +23,7 @@
         $dataset = $query->fetchAll();
 
         if(count($dataset) > 0) {
+          $response['id'] = $dataset[0]['id'];
           $response['label'] = $dataset[0]['label'];
           $response['template'] = $dataset[0]['template'];
           $response['error'] = false;
@@ -64,7 +65,7 @@
         $response["error_msg"] = 'Your session is invalid.';
       }
     } else {
-      $response['error_msg'] = 'The template parameter was not given.';
+      $response['error_msg'] = 'The id or template parameter(s) were not given.';
     }
   } else if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_ARGS['label']) && isset($_ARGS['template']) && isset($_ARGS['account']) && isset($_ARGS['key'])) {
