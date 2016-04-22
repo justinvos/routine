@@ -25,10 +25,7 @@
 
     <div id='body_outer'>
       <div id='side_outer'>
-        <ul>
-          <li>CS 230 Assignment 1</li>
-          <li>Daily schedule</li>
-          <li>CS 230 Assignment 2</li>
+        <ul id='template_list'>
         </ul>
       </div>
 
