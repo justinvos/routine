@@ -16,8 +16,7 @@
       </div>
       <div id='head_main'>
         <ul>
-          <li><input type='text' placeholder='label'></li>
-          <a><li>New</li></a>
+          <a id='edit_button'><li>Edit</li></a>
           <a><li>Reset</li></a>
         </ul>
       </div>
@@ -30,11 +29,7 @@
       </div>
 
       <div id='main_outer'>
-        <ul>
-          <li>Document Amount class.</li>
-          <li class='checked'>Document Currency class.</li>
-          <li>Document Currencies class.</li>
-          <li>Document CurrencyExchangeMenu class.</li>
+        <ul id='task_list'>
         </ul>
       </div>
     </div>

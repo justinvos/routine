@@ -83,6 +83,13 @@ div#head_outer
   border-bottom: 1px solid white;
 }
 
+#edit_button
+{
+  cursor: pointer;
+}
+
+
+
 #side_outer
 {
   float: left;
@@ -133,8 +140,13 @@ div#head_outer
   font-family: 'Noto Sans', sans-serif;
   font-size: 26px;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   width: 100%;
+}
+
+#main_outer ul li
+{
+  padding: 20px;
 }
 
 #main_outer ul li:hover
@@ -145,4 +157,30 @@ div#head_outer
 #main_outer ul li.checked
 {
   background: #40d47e;
+}
+
+#main_outer ul li.editable
+{
+  padding: 0;
+}
+
+
+input.task_textbox
+{
+  background: inherit;
+  border: none;
+  box-sizing: border-box;
+  color: #49463B;
+  cursor: text;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 26px;
+  padding: 20px;
+  width: 100%;
+
+  outline: none;
+}
+
+input.task_textbox:focus
+{
+  color: black;
 }
