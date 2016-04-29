@@ -1,0 +1,115 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#head_outer {
+  background: #2C3E50;
+  border-bottom: white 1px solid;
+  height: 44px;
+  padding: 10px;
+}
+
+h2 {
+  color: white;
+  display: inline-block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+#nav_list {
+  display: inline-block;
+  float: left;
+}
+
+#nav_list li {
+  display: inline-block;
+
+  padding: 7px 15px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.block {
+  background: #34495e;
+  color: white;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.block:hover {
+
+}
+
+.link {
+  color: #DDD;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.link:hover {
+  color: #FFF;
+}
+
+.check_area {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  height: 57px;
+  margin: 0;
+  padding: 0;
+  width: 57px;
+}
+
+.check_area:hover {
+  background: #2c3e50;
+}
+
+.check_area[completed="true"] {
+}
+
+.check_area[completed="true"]:hover {
+}
+
+.check_img {
+  display: inline-block;
+  height: 41px;
+  padding: 8px;
+  width: 41px;
+}
+
+#task_list li input {
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  float: left;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  margin: 10px;
+  padding: 7px;
+  width: 600px;
+}
+
+#task_list li input:hover {
+  background: #3B536B;
+}
+
+#task_list li input:focus {
+  background: white;
+  color: black;
+}
+
+
+/* TEMP CODE START */
+/* TEMP CODE END */
